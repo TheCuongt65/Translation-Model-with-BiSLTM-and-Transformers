@@ -47,6 +47,7 @@ def code_sequence(input_seq):
         decoder_input = [last_h, last_c]
     return " ".join(translation).replace('endofsentence', '')
 
+
 if __name__ == '__main__':
     # text = ["Are you going to come tomorrow?",
     #         "Please put the dustpan in the broom closet",

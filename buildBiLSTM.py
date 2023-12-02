@@ -146,10 +146,10 @@ Epoch 5:
     
 Epoch 10:
     Acc :
-        Train 
-        Val
-        Los 
-    Time:
-    Bleu:
+        Train 0.9565
+        Val 0.9484
+    Loss: 0.1836 
+    Time: 57.25p
+    Bleu: 
         
 '''
