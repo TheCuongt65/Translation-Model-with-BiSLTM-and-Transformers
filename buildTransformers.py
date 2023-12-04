@@ -6,7 +6,7 @@ import tensorflow as tf
 import pickle
 
 BATCH_SIZE = 64
-EPOCHS = 1  # This should be at least 10 for convergence
+EPOCHS = 10  # This should be at least 10 for convergence
 MAX_SEQUENCE_LENGTH = 40
 ENG_VOCAB_SIZE = 3614
 SPA_VOCAB_SIZE = 4989
@@ -168,3 +168,35 @@ with open(f'result/Transformers/vi_tokenizer_epoch{EPOCHS}.pickle', 'wb') as han
 ## Lưu lại model
 transformer.save(f'result/Transformers/transformers_epoch{EPOCHS}')
 
+
+###
+'''
+Epoch 2: 
+    Time 284 + 279
+    Acc
+        Train 0.7354
+        Val 0.7615
+    Loss
+        Train 0.4138
+        Val 0.3668
+    BLEU
+        
+Epoch 5: 
+    Time 219 + 212 + 213+ 212 + 212
+    Acc
+        Train 0.7934
+        Val 0.7894 
+    Loss
+        Train 0.3285
+        Val 0.3315 
+    BLEU
+Epoch 10:
+    Time 219 + 212 + 213+ 212 + 212 + 222 + 214 + 213 + 213 + 215
+    Acc
+        Train 0.8271
+        Val 0.8033
+    Loss
+        Train 0.2765
+        Val 0.3163
+    BLEU
+'''
