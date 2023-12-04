@@ -49,9 +49,9 @@ def decode_sequences(input_sentences):
 
 if __name__ == '__main__':
     # test_eng_texts = [pair[0] for pair in test_pairs]
-    test_eng_texts = ["i'm cuong", "i really love you", "i've got no money", "'only you are so stupid"]
+    test_eng_texts = ["i'm cuong", "Let's me know about your methodology", "only you are so stupid"]
     print(test_eng_texts)
-    for i in range(4):
+    for i in range(3):
         input_sentence = test_eng_texts[i]
         translated = decode_sequences(tf.constant([input_sentence]))
         translated = translated.numpy()[0].decode("utf-8")
