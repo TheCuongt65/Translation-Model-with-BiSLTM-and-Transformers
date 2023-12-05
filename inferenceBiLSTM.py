@@ -12,6 +12,7 @@ with open('result/BiLSTM/tokeizerBiLSTM_epoch10.pickle', 'rb') as f:
 
 target_id_to_word = vi_tokenizer.index_word
 def code_sequence(input_seq):
+    input_seq = [input_seq]
     seq_tokeized = eng_tokenizer.texts_to_sequences(input_seq)
     pad_eng_tokenized = processText.pad(seq_tokeized, length=63)
     english_input = pad_eng_tokenized[:, :, np.newaxis]
@@ -53,4 +54,4 @@ if __name__ == '__main__':
     #         "Please put the dustpan in the broom closet",
     #         "Friendship consists of mutual understanding"]
     print("I am a student.")
-    print(code_sequence(["I am a student"]))
+    print(code_sequence("I am a student"))

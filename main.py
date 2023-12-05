@@ -11,6 +11,12 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+    from nltk.translate.bleu_score import sentence_bleu
+    reference = [['xin', 'vui', 'lòng', 'đặt', 'người', 'quét', 'rác', 'trong', 'tủ', 'chổi']]
+    candidate = ['xin', 'vui', 'lòng', 'đặt', 'mọi', 'người', 'đặt', 'chổi', 'trong', 'tủ', 'phòng', 'sổ']
+    score = sentence_bleu(reference, candidate)
+    print(score)
+
     print_hi('PyCharm')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

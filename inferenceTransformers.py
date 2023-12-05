@@ -1,22 +1,22 @@
 import tensorflow as tf
 from keras.models import load_model
-# from tensorflow.keras.models import load_model
 import keras_nlp
 import pickle
 
 MAX_SEQUENCE_LENGTH = 40
 
-transformer = load_model('result/Transformers/transformers_epoch1')
+transformer = load_model('result/Transformers/transformers_epoch10')
 # transformer = load_model('result/Transformers/transformers_epoch1.keras')
 print(transformer.summary())
 
-with open('result/Transformers/vi_tokenizer_epoch1.pickle', 'rb') as handle:
+with open('result/Transformers/vi_tokenizer_epoch10.pickle', 'rb') as handle:
     vi_tokenizer = pickle.load(handle)
-with open('result/Transformers/eng_tokenizer_epoch1.pickle', 'rb') as handle:
+with open('result/Transformers/eng_tokenizer_epoch10.pickle', 'rb') as handle:
     eng_tokenizer = pickle.load(handle)
 
 
 def decode_sequences(input_sentences):
+    input_sentences = tf.constant([input_sentences.lower()])
     batch_size = tf.shape(input_sentences)[0]
 
     # Tokenize the encoder input.
@@ -47,20 +47,24 @@ def decode_sequences(input_sentences):
     generated_sentences = vi_tokenizer.detokenize(generated_tokens)
     return generated_sentences
 
+def code_sequence(input_sentence):
+    translated = decode_sequences(input_sentence)
+    translated = translated.numpy()[0].decode("utf-8")
+    translated = (
+        translated.replace("[PAD]", "")
+        .replace("[START]", "")
+        .replace("[END]", "")
+        .strip()
+    )
+    return translated
+
 if __name__ == '__main__':
     # test_eng_texts = [pair[0] for pair in test_pairs]
-    test_eng_texts = ["i'm cuong", "Let's me know about your methodology", "only you are so stupid"]
+    test_eng_texts = ["Please put the dustpan in the broom closet"]
     print(test_eng_texts)
     for i in range(3):
         input_sentence = test_eng_texts[i]
-        translated = decode_sequences(tf.constant([input_sentence]))
-        translated = translated.numpy()[0].decode("utf-8")
-        translated = (
-            translated.replace("[PAD]", "")
-            .replace("[START]", "")
-            .replace("[END]", "")
-            .strip()
-        )
+        translated = code_sequence(input_sentence)
         print(f"** Example {i} **")
         print(input_sentence)
         print(translated)
