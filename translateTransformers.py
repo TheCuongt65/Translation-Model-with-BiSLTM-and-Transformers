@@ -12,6 +12,7 @@ resultTransformers = [inferenceTransformers.code_sequence(sentence) for sentence
 result_string = '\n'.join(resultTransformers)
 with open('result/vi_Trasformers.txt', 'a', encoding='utf-8') as f:
     f.write(result_string)
+    f.write('\n')
 
 end_time = time.time()
 print(f"Thời gian chạy là {(end_time-start_time)/60} phút")
