@@ -13,6 +13,7 @@ Môi trường như sau
 * Tensorflow-gpu: 2.10.1
 * Keras-nlp: 2.10.0
 * nltk: 3.8.1
+* gradio
 
 # Result
 * Trong quá trình này Acc và Loss được tính trong quá trình train model
