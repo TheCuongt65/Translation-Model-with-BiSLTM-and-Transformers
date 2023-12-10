@@ -32,7 +32,8 @@ with gr.Blocks() as demo:
         btn = gr.Button("Translate")
         btn.click(fn=translate_transformer, inputs=inp, outputs=out)
 
-demo.launch()
+if __name__=="__main__":
+    demo.launch()
 
 
 

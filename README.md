@@ -18,6 +18,8 @@ Môi trường như sau
 # Result
 * Trong quá trình này Acc và Loss được tính trong quá trình train model
 * Điểm Bleu (đánh giá chất lượng bản dịch) được tính dựa trên khoảng 2000 mẫu bất kỳ trong dữ liệu (Sau quá trình train)
+* Thời gian Train với BiLSTM_epoch10 là 57.25p, và Transformers_epoch10 là 35.75p
+* Thời gian đánh giá Bleu tương đối lâu vì phải dịch từng bản ghi (Chiếm khoảng 90% thời gian đánh giá)
 
 |            | BiLSTM_epoch10 | Transformers_epoch10 |
 |------------|----------------|----------------------|
@@ -28,6 +30,5 @@ Môi trường như sau
 | **Bleu**       | **0.5364**         | **0.6105**               |
 
 # Lưu ý
-* Thời gian Train với BiLSTM_epoch10 là 57.25p, và Transformers_epoch10 là 35.75p
-* Thời gian đánh giá Bleu tương đối lâu vì phải dịch từng bản ghi (Chiếm khoảng 90% thời gian đánh giá)
+* Vui lòng ghi đường dẫn nếu kho lưu trữ này giúp ích cho bạn 💕💕💕
 
