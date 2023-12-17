@@ -3,7 +3,7 @@ Mô hình với nhiệm vụ dịch máy đơn giản English to Vietnamese
 
 # Systems Requirments
 Chúng tôi sử dụng Laptop ASUS G14 ROG ZENPHYRUS với cấu hình như sau:
-* CPU: Rezen 7 4000
+
 * GPU: NVIDA GEFORCE GTX 1060 4G
 * RAM: 8G
 * Hệ điều hành Win 11
